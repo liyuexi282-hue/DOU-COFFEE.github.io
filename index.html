@@ -1,0 +1,2257 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOU COFFEE Brand Portfolio</title>
+    <meta
+      name="description"
+      content="DOU COFFEE 意式胶囊咖啡品牌设计作品集，展示品牌策略、视觉系统、包装与延展应用。"
+    />
+    <style>
+      :root {
+        --cream: #f6ead7;
+        --cream-2: #fff2dc;
+        --brown: #4b2a1f;
+        --brown-2: #2d1c15;
+        --berry: #895967;
+        --rose: #b48f9a;
+        --red: #b84b48;
+        --green: #3a5350;
+        --ink: #282828;
+        --shadow: rgba(75, 42, 31, 0.18);
+        font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+        color: var(--brown);
+        background: var(--cream);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background:
+          radial-gradient(circle at 30% 8%, rgba(180, 143, 154, 0.28), transparent 30%),
+          linear-gradient(180deg, #f4e6cf 0%, #fff2df 48%, #f4dfc6 100%);
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .progress {
+        position: fixed;
+        inset: 0 auto auto 0;
+        z-index: 100;
+        width: 100%;
+        height: 5px;
+        background: var(--red);
+        transform: scaleX(0);
+        transform-origin: left center;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 80;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        width: min(1180px, calc(100% - 32px));
+        min-height: 76px;
+        margin: 16px auto 0;
+        padding: 12px 16px;
+        color: #f7e8cf;
+        background: rgba(81, 66, 59, 0.95);
+        border: 2px solid var(--brown-2);
+        box-shadow: 0 10px 0 rgba(43, 27, 21, 0.16);
+        backdrop-filter: blur(14px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-width: max-content;
+        font-weight: 950;
+      }
+
+      .brand-symbol {
+        display: grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        border: 2px solid #f7e8cf;
+        border-radius: 50%;
+        font-size: 0.8rem;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 4px;
+      }
+
+      .nav a {
+        position: relative;
+        display: grid;
+        gap: 2px;
+        min-width: 90px;
+        padding: 8px 10px;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        transition:
+          background 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease,
+          transform 180ms ease;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible,
+      .nav a.active {
+        background: rgba(246, 234, 215, 0.12);
+        transform: translateY(-2px);
+      }
+
+      .nav a.active {
+        color: #fff2dc;
+        border-color: #f7d9a8;
+        box-shadow:
+          inset 0 -3px 0 #f7d9a8,
+          0 0 0 2px rgba(247, 217, 168, 0.18);
+      }
+
+      .nav small {
+        color: #d8b3bc;
+        font-size: 0.68rem;
+      }
+
+      .nav span {
+        font-size: 0.86rem;
+        font-weight: 850;
+      }
+
+      .menu {
+        display: none;
+        width: 42px;
+        height: 42px;
+        color: #f8ead3;
+        background: transparent;
+        border: 1px solid rgba(248, 234, 211, 0.35);
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .hero {
+        position: relative;
+        padding-bottom: 54px;
+        --hero-x: 0;
+        --hero-y: 0;
+      }
+
+      .hero-ribbon {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        min-height: 46px;
+        margin-top: -92px;
+        padding: 10px max(18px, calc((100vw - 1180px) / 2));
+        color: #f8e8cb;
+        background: #43251b;
+        font-size: clamp(1rem, 2vw, 1.45rem);
+        font-style: italic;
+        font-weight: 850;
+      }
+
+      .hero-ribbon span {
+        text-align: center;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+        gap: 34px;
+        align-items: center;
+        width: min(1180px, calc(100% - 32px));
+        min-height: calc(100vh - 42px);
+        margin: 0 auto;
+        padding: 110px 0 42px;
+      }
+
+      .eyebrow,
+      .section-title span {
+        margin: 0;
+        color: #8f3f37;
+        font-size: 0.78rem;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        display: inline-block;
+        margin: 10px 0 22px;
+        color: #fff3df;
+        font-family: Impact, Haettenschweiler, "Arial Black", "Microsoft YaHei", sans-serif;
+        font-size: clamp(4.3rem, 10.8vw, 9.8rem);
+        font-weight: 950;
+        font-style: italic;
+        line-height: 0.78;
+        letter-spacing: 0;
+        -webkit-text-stroke: 3px #4b2a1f;
+        paint-order: stroke fill;
+        transform: skewX(-8deg) rotate(-2deg);
+        transform-origin: left center;
+        text-shadow:
+          2px 2px 0 #b48f9a,
+          4px 4px 0 #895967,
+          7px 7px 0 #4b2a1f,
+          12px 12px 0 #2d1c15,
+          18px 18px 0 rgba(137, 89, 103, 0.38);
+      }
+
+      .hero-copy p:last-of-type {
+        max-width: 610px;
+        margin: 0;
+        color: #4a2e24;
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        font-weight: 750;
+        line-height: 1.8;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 48px;
+        padding: 0 18px;
+        border: 2px solid var(--brown-2);
+        border-radius: 6px;
+        font-weight: 950;
+        box-shadow: 0 6px 0 var(--brown-2);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .action.primary {
+        color: #f8e8cf;
+        background: #8d3f46;
+      }
+
+      .action.secondary {
+        color: #3d2a22;
+        background: #f7d9a8;
+      }
+
+      .action:hover {
+        transform: translateY(3px);
+        box-shadow: 0 3px 0 var(--brown-2);
+      }
+
+      .hero-art {
+        overflow: hidden;
+        aspect-ratio: 64 / 45;
+        height: auto;
+        min-height: 0;
+        border: 3px solid var(--brown-2);
+        background: #bd4545;
+        box-shadow: 18px 18px 0 #dba2a8;
+        perspective: 900px;
+        transition: transform 200ms ease;
+      }
+
+      .hero-art img {
+        width: 100%;
+        height: 100%;
+        min-height: 0;
+        object-fit: contain;
+        object-position: center;
+        transform:
+          translate3d(calc(var(--hero-x) * 10px), calc(var(--hero-y) * 8px), 0)
+          rotateY(calc(var(--hero-x) * -5deg))
+          rotateX(calc(var(--hero-y) * 4deg))
+          scale(1.02);
+        transition: transform 160ms ease-out;
+      }
+
+      .checker {
+        display: grid;
+        grid-template-columns: repeat(28, 1fr);
+        height: 36px;
+        margin-top: 12px;
+      }
+
+      .checker span:nth-child(odd) {
+        background: #3a2017;
+      }
+
+      .section {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 90px 0;
+      }
+
+      #visual {
+        position: relative;
+        isolation: isolate;
+        padding-top: 112px;
+        padding-bottom: 112px;
+      }
+
+      #visual::before {
+        position: absolute;
+        inset: 0 calc(50% - 50vw);
+        z-index: -2;
+        content: "";
+        background:
+          linear-gradient(180deg, rgba(255, 242, 220, 0.94), rgba(246, 234, 215, 0.98)),
+          var(--cream);
+      }
+
+      #visual::after {
+        position: absolute;
+        inset: 0 calc(50% - 50vw);
+        z-index: -1;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(81, 66, 59, 0.035) 1px, transparent 1px) 0 0 / 130px 100%,
+          linear-gradient(rgba(81, 66, 59, 0.03) 1px, transparent 1px) 0 0 / 100% 130px;
+        pointer-events: none;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 28px;
+        border-bottom: 2px dashed rgba(61, 42, 34, 0.35);
+      }
+
+      .section-title h2 {
+        margin: 0 0 16px;
+        color: #4a2d22;
+        font-size: clamp(2.2rem, 6vw, 4.6rem);
+        font-weight: 950;
+        line-height: 0.96;
+      }
+
+      .intro-grid,
+      .summary-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 22px;
+      }
+
+      .panel,
+      .image-panel,
+      .visual-card,
+      .gallery-card,
+      .summary-card {
+        border: 2px solid var(--brown);
+        background: rgba(250, 238, 219, 0.9);
+        box-shadow: 8px 8px 0 var(--shadow);
+      }
+
+      .panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 320px;
+        padding: clamp(24px, 5vw, 42px);
+      }
+
+      .panel h3,
+      .visual-copy h3,
+      .gallery-card h3 {
+        margin: 0;
+        color: #43251b;
+        font-size: clamp(1.7rem, 3.2vw, 2.7rem);
+        font-weight: 950;
+      }
+
+      .panel p,
+      .visual-copy p,
+      .strategy-line {
+        color: #5b4035;
+        font-size: 1rem;
+        font-weight: 650;
+        line-height: 1.85;
+      }
+
+      .image-panel {
+        overflow: hidden;
+        min-height: 320px;
+      }
+
+      .image-panel img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 52%;
+      }
+
+      .pain-grid,
+      .position-grid,
+      .gallery-grid {
+        display: grid;
+        gap: 18px;
+      }
+
+      .pain-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        width: min(760px, 100%);
+        margin: 0 auto 22px;
+      }
+
+      .pain {
+        display: grid;
+        place-items: center;
+        min-height: 74px;
+        padding: 14px 18px;
+        color: var(--brown);
+        border: 3px solid #b94248;
+        border-radius: 999px;
+        background: rgba(245, 231, 209, 0.82);
+        transform: rotate(-2deg);
+        box-shadow: 5px 6px 0 rgba(75, 42, 31, 0.12);
+      }
+
+      .pain:nth-child(2) {
+        transform: rotate(2deg);
+      }
+
+      .pain span {
+        font-size: clamp(0.98rem, 1.4vw, 1.22rem);
+        font-weight: 950;
+      }
+
+      .position-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        padding: clamp(24px, 4vw, 44px);
+        background:
+          linear-gradient(rgba(246, 234, 215, 0.38), rgba(246, 234, 215, 0.62)),
+          url("public/coffee-assets/coffee-beans-scene.svg") center / cover;
+        border: 2px solid var(--brown);
+      }
+
+      .position-grid article {
+        display: grid;
+        justify-items: center;
+        align-content: center;
+        gap: 12px;
+        min-height: clamp(210px, 22vw, 286px);
+        padding: 34px 18px;
+        text-align: center;
+        border: 3px solid var(--brown);
+        border-radius: 50%;
+        background: rgba(248, 234, 211, 0.88);
+        box-shadow: 10px 12px 0 rgba(45, 28, 21, 0.18);
+        backdrop-filter: blur(1px);
+      }
+
+      .position-grid h3 {
+        margin: 0;
+        font-size: clamp(1.55rem, 2.8vw, 2.35rem);
+        font-weight: 950;
+      }
+
+      .position-grid p,
+      .gallery-card p,
+      .summary-card p {
+        margin: 0;
+        color: #826557;
+        font-size: 0.78rem;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .strategy-line {
+        margin: 26px 0 0;
+        padding: 20px 24px;
+        color: #8d3f37;
+        background: #f7d9a8;
+        border: 2px dashed #8d3f37;
+      }
+
+      .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .tabs button {
+        min-height: 44px;
+        padding: 0 16px;
+        color: var(--brown);
+        cursor: pointer;
+        background: #f5e7d1;
+        border: 2px solid var(--brown);
+        border-radius: 6px;
+        font-weight: 950;
+        transition:
+          background 180ms ease,
+          color 180ms ease,
+          transform 180ms ease;
+      }
+
+      .tabs button.active,
+      .tabs button:hover {
+        color: #f8ead3;
+        background: var(--berry);
+        transform: translateY(-2px);
+      }
+
+      .visual-card {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+        min-height: 440px;
+        overflow: hidden;
+      }
+
+      .visual-card.logo-mode {
+        background: rgba(250, 238, 219, 0.52);
+        border-color: rgba(75, 42, 31, 0.34);
+        box-shadow: 0 16px 38px rgba(75, 42, 31, 0.08);
+      }
+
+      .visual-copy {
+        align-self: center;
+        padding: clamp(24px, 5vw, 46px);
+      }
+
+      .visual-spec {
+        display: grid;
+        min-height: 440px;
+        overflow: hidden;
+        border-left: 2px solid var(--brown);
+        background: #f8ead3;
+      }
+
+      .logo-spec {
+        place-items: center;
+        padding: clamp(16px, 3vw, 34px);
+        background: #f4e6cf;
+      }
+
+      .logo-standard-board {
+        position: relative;
+        width: min(100%, 900px);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+        transition:
+          filter 220ms ease,
+          transform 220ms ease;
+      }
+
+      .logo-standard-board::before {
+        position: absolute;
+        z-index: 2;
+        inset: 0 auto 0 -28%;
+        width: 30%;
+        content: "";
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.66), transparent);
+        filter: blur(2px);
+        pointer-events: none;
+        transform: skewX(-16deg);
+        opacity: 0;
+      }
+
+      .logo-standard-stage {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: #f1dfc9;
+        border: 1px solid rgba(75, 42, 31, 0.28);
+      }
+
+      .logo-sequence-frame {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0;
+      }
+
+      .visual-card.visible .logo-standard-board {
+        animation: logo-in 720ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+
+      .visual-card.visible .logo-standard-board::before {
+        animation: logo-shine 3s ease-in-out 2s infinite;
+      }
+
+      .visual-card.visible .logo-sequence-frame {
+        animation: logo-sequence-in 680ms ease both;
+      }
+
+      .logo-sequence-frame.step-logo {
+        z-index: 1;
+        animation-delay: 120ms;
+      }
+
+      .logo-sequence-frame.step-frame {
+        z-index: 2;
+        animation-delay: 860ms;
+      }
+
+      .logo-sequence-frame.step-size {
+        z-index: 3;
+        animation-delay: 1560ms;
+      }
+
+      .visual-card.visible .logo-sequence-frame.step-frame,
+      .visual-card.visible .logo-sequence-frame.step-size {
+        animation-name: logo-overlay-in;
+      }
+
+      .logo-standard-board:hover .logo-sequence-frame {
+        animation-duration: 520ms;
+      }
+
+      .logo-standard-board:hover {
+        filter: drop-shadow(12px 14px 0 rgba(40, 40, 40, 0.12));
+        transform: translateY(-6px) scale(1.018);
+      }
+
+      .color-spec {
+        place-content: center;
+        gap: 18px;
+        padding: clamp(18px, 3vw, 28px);
+        background:
+          linear-gradient(rgba(248, 234, 211, 0.06), rgba(248, 234, 211, 0.06)),
+          #51423b;
+      }
+
+      .palette-board {
+        display: grid;
+        gap: 14px;
+        width: min(100%, 620px);
+        padding: clamp(16px, 2.4vw, 24px);
+        color: #f8ead3;
+        background: rgba(248, 234, 211, 0.1);
+        border: 2px solid rgba(248, 234, 211, 0.34);
+        box-shadow: 8px 8px 0 rgba(45, 28, 21, 0.22);
+      }
+
+      .palette-strip {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        min-height: 84px;
+        overflow: hidden;
+        border: 2px solid rgba(248, 234, 211, 0.48);
+      }
+
+      .palette-strip span {
+        display: block;
+        transition: transform 180ms ease;
+      }
+
+      .palette-strip span:hover {
+        transform: scaleY(1.08);
+        transform-origin: bottom;
+      }
+
+      .palette-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 14px;
+        margin: 0;
+      }
+
+      .palette-item {
+        display: grid;
+        grid-template-columns: 24px minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        min-height: 42px;
+        padding: 8px 10px;
+        background: rgba(248, 234, 211, 0.08);
+        border: 1px solid rgba(248, 234, 211, 0.2);
+      }
+
+      .palette-dot {
+        width: 24px;
+        height: 24px;
+        border: 2px solid rgba(248, 234, 211, 0.72);
+        border-radius: 50%;
+        box-shadow: 3px 3px 0 rgba(24, 25, 26, 0.24);
+      }
+
+      .palette-item h4,
+      .palette-item p {
+        margin: 0;
+      }
+
+      .palette-item h4 {
+        font-size: 0.88rem;
+        font-weight: 950;
+      }
+
+      .palette-item p {
+        margin-top: 2px;
+        font-size: 0.78rem;
+        font-weight: 950;
+      }
+
+      .palette-meta {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        justify-content: space-between;
+        color: rgba(248, 234, 211, 0.78);
+        font-size: 0.68rem;
+        font-weight: 850;
+      }
+
+      .mascot-spec {
+        align-content: stretch;
+        padding: clamp(18px, 3vw, 30px);
+        background:
+          linear-gradient(90deg, rgba(191, 62, 62, 0.24) 0 16%, transparent 16% 33%, rgba(191, 62, 62, 0.2) 33% 50%, transparent 50% 67%, rgba(191, 62, 62, 0.2) 67% 84%, transparent 84%),
+          #d08a82;
+      }
+
+      .mascot-roster {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 0;
+        overflow: hidden;
+        border: 2px solid var(--brown-2);
+        box-shadow: 8px 8px 0 rgba(45, 28, 21, 0.24);
+      }
+
+      .mascot-scene {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16 / 9;
+        background: #bd4c4c;
+      }
+
+      .mascot-scene img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+        transform: scale(1);
+        transition:
+          filter 180ms ease,
+          transform 180ms ease;
+      }
+
+      .mascot-roster:hover .mascot-scene img {
+        filter: saturate(1.06) contrast(1.03);
+        transform: scale(1.015);
+      }
+
+      .mascot-names {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        background: #d4d0bc;
+        border-top: 2px solid var(--brown-2);
+      }
+
+      .mascot-name {
+        display: grid;
+        align-content: center;
+        min-height: 74px;
+        padding: 10px 8px 12px;
+        color: #3d2a22;
+        text-align: center;
+        border-right: 2px solid rgba(45, 28, 21, 0.55);
+      }
+
+      .mascot-name:last-child {
+        border-right: 0;
+      }
+
+      .mascot-name strong {
+        display: block;
+        color: #4b2a1f;
+        font-size: clamp(0.9rem, 1.7vw, 1.18rem);
+        font-weight: 950;
+        line-height: 1.05;
+      }
+
+      .mascot-name span {
+        display: block;
+        margin-top: 4px;
+        color: #744a3c;
+        font-size: 0.72rem;
+        font-weight: 950;
+        line-height: 1.25;
+      }
+
+      .ip-playground {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.65fr);
+        min-height: 520px;
+        margin-top: 24px;
+        overflow: hidden;
+        border: 2px solid var(--brown);
+        background: rgba(250, 238, 219, 0.94);
+        box-shadow: 10px 12px 0 rgba(75, 42, 31, 0.16);
+      }
+
+      .ip-stage {
+        position: relative;
+        display: grid;
+        place-items: end center;
+        min-height: 520px;
+        padding: clamp(22px, 4vw, 44px);
+        cursor: pointer;
+        background:
+          radial-gradient(circle at 52% 52%, rgba(255, 242, 220, 0.72), transparent 24%),
+          linear-gradient(90deg, rgba(184, 75, 72, 0.22) 0 12%, transparent 12% 24%) 0 0 / 170px 100%,
+          linear-gradient(180deg, rgba(137, 89, 103, 0.38) 0 42%, #f6ead7 42% 100%);
+        outline: none;
+        transition: background 220ms ease;
+      }
+
+      .ip-stage::after {
+        position: absolute;
+        right: 18%;
+        bottom: 9%;
+        width: 56%;
+        height: 17%;
+        content: "";
+        background: rgba(45, 28, 21, 0.22);
+        border-radius: 50%;
+        filter: blur(2px);
+      }
+
+      .ip-team-image {
+        position: relative;
+        z-index: 1;
+        width: min(72%, 430px);
+        max-height: 390px;
+        object-fit: contain;
+        transform: translateY(0) rotate(0) scale(1);
+        transform-origin: center bottom;
+        filter: saturate(1.02) contrast(1.02);
+        transition:
+          filter 220ms ease,
+          transform 260ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+      }
+
+      .ip-playground:hover .ip-team-image {
+        filter: saturate(1.08) contrast(1.04);
+      }
+
+      .ip-team-image.is-reacting {
+        animation: mascot-react 680ms cubic-bezier(0.2, 1.4, 0.35, 1) both;
+      }
+
+      .ip-playground[data-pose="0"] .ip-team-image {
+        transform: translateY(0) rotate(-4deg) scale(1.05);
+      }
+
+      .ip-playground[data-pose="1"] .ip-team-image {
+        transform: translateY(-28px) rotate(11deg) scale(1.14);
+      }
+
+      .ip-playground[data-pose="2"] .ip-team-image {
+        transform: translateX(-26px) translateY(-10px) rotate(-18deg) scale(1.1);
+      }
+
+      .ip-burst {
+        position: absolute;
+        inset: 14% 12% auto auto;
+        z-index: 0;
+        width: 230px;
+        height: 230px;
+        pointer-events: none;
+      }
+
+      .ip-burst span,
+      .ip-speed-lines span,
+      .ip-steam span {
+        position: absolute;
+        display: block;
+      }
+
+      .ip-burst span {
+        inset: 50% auto auto 50%;
+        width: 100%;
+        height: 12px;
+        background: #f7d9a8;
+        border: 2px solid var(--brown);
+        border-radius: 999px;
+        opacity: 0;
+        transform-origin: left center;
+      }
+
+      .ip-burst span:nth-child(1) {
+        --burst-rotate: 18deg;
+        transform: rotate(18deg) scaleX(0);
+      }
+
+      .ip-burst span:nth-child(2) {
+        --burst-rotate: 72deg;
+        transform: rotate(72deg) scaleX(0);
+      }
+
+      .ip-burst span:nth-child(3) {
+        --burst-rotate: 132deg;
+        transform: rotate(132deg) scaleX(0);
+      }
+
+      .ip-burst span:nth-child(4) {
+        --burst-rotate: 190deg;
+        transform: rotate(190deg) scaleX(0);
+      }
+
+      .ip-playground.is-switching .ip-burst span {
+        animation: burst-pop 620ms ease both;
+      }
+
+      .ip-speed-lines {
+        position: absolute;
+        inset: 34% auto auto 9%;
+        z-index: 0;
+        width: 34%;
+        height: 140px;
+        pointer-events: none;
+      }
+
+      .ip-speed-lines span {
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: var(--brown);
+        border-radius: 999px;
+        opacity: 0;
+      }
+
+      .ip-speed-lines span:nth-child(1) {
+        top: 0;
+      }
+
+      .ip-speed-lines span:nth-child(2) {
+        top: 52px;
+        width: 78%;
+      }
+
+      .ip-speed-lines span:nth-child(3) {
+        top: 104px;
+        width: 58%;
+      }
+
+      .ip-playground.is-switching .ip-speed-lines span {
+        animation: speed-swipe 640ms ease both;
+      }
+
+      .ip-steam {
+        position: absolute;
+        right: 22%;
+        bottom: 27%;
+        z-index: 2;
+        width: 130px;
+        height: 150px;
+        pointer-events: none;
+      }
+
+      .ip-steam span {
+        bottom: 0;
+        width: 20px;
+        height: 78px;
+        border: solid rgba(255, 242, 220, 0.9);
+        border-width: 0 0 0 5px;
+        border-radius: 50%;
+        opacity: 0;
+      }
+
+      .ip-steam span:nth-child(1) {
+        left: 16px;
+      }
+
+      .ip-steam span:nth-child(2) {
+        left: 54px;
+        height: 104px;
+      }
+
+      .ip-steam span:nth-child(3) {
+        left: 94px;
+      }
+
+      .ip-playground.is-switching .ip-steam span {
+        animation: steam-rise 800ms ease both;
+      }
+
+      .ip-speech {
+        position: absolute;
+        top: clamp(18px, 3vw, 34px);
+        left: clamp(18px, 4vw, 44px);
+        z-index: 2;
+        width: min(340px, calc(100% - 44px));
+        padding: 16px 18px;
+        color: #3d2a22;
+        background: #fff2dc;
+        border: 2px solid var(--brown);
+        border-radius: 8px;
+        box-shadow: 7px 7px 0 rgba(45, 28, 21, 0.2);
+      }
+
+      .ip-speech::after {
+        position: absolute;
+        left: 32px;
+        bottom: -17px;
+        width: 28px;
+        height: 28px;
+        content: "";
+        background: #fff2dc;
+        border-right: 2px solid var(--brown);
+        border-bottom: 2px solid var(--brown);
+        transform: rotate(45deg);
+      }
+
+      .ip-speech p,
+      .ip-speech strong {
+        position: relative;
+        z-index: 1;
+        display: block;
+        margin: 0;
+      }
+
+      .ip-speech p {
+        color: var(--berry);
+        font-size: 0.76rem;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .ip-speech strong {
+        margin-top: 6px;
+        font-size: clamp(1rem, 2vw, 1.24rem);
+        line-height: 1.55;
+      }
+
+      .ip-control {
+        display: grid;
+        align-content: center;
+        gap: 18px;
+        padding: clamp(24px, 4vw, 42px);
+        background:
+          linear-gradient(180deg, rgba(255, 242, 220, 0.95), rgba(246, 234, 215, 0.95)),
+          radial-gradient(circle at 100% 0, rgba(180, 143, 154, 0.32), transparent 36%);
+        border-left: 2px solid var(--brown);
+      }
+
+      .ip-control h3,
+      .ip-control p {
+        margin: 0;
+      }
+
+      .ip-control h3 {
+        color: #43251b;
+        font-size: clamp(1.8rem, 3.2vw, 3rem);
+        font-weight: 950;
+        line-height: 1;
+      }
+
+      .ip-role {
+        color: #6f4d41;
+        font-weight: 900;
+        line-height: 1.7;
+      }
+
+      .ip-flavor {
+        display: inline-flex;
+        width: fit-content;
+        min-height: 42px;
+        align-items: center;
+        padding: 0 16px;
+        color: #fff2dc;
+        background: var(--ip-accent, var(--berry));
+        border: 2px solid var(--brown-2);
+        border-radius: 999px;
+        box-shadow: 0 5px 0 var(--brown-2);
+        font-size: 0.86rem;
+        font-weight: 950;
+      }
+
+      .ip-main-button {
+        min-height: 52px;
+        padding: 0 20px;
+        color: #fff2dc;
+        cursor: pointer;
+        background: var(--ip-accent, var(--berry));
+        border: 2px solid var(--brown-2);
+        border-radius: 8px;
+        box-shadow: 0 7px 0 var(--brown-2);
+        font-size: 1rem;
+        font-weight: 950;
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .ip-main-button:hover {
+        transform: translateY(-2px);
+      }
+
+      .ip-main-button:active {
+        transform: translateY(3px);
+        box-shadow: 0 3px 0 var(--brown-2);
+      }
+
+      .ip-hint {
+        max-width: 430px;
+        color: #7a594c;
+        font-size: 0.9rem;
+        font-weight: 800;
+        line-height: 1.8;
+      }
+
+      .gallery-grid {
+        display: flex;
+        gap: 22px;
+        overflow-x: auto;
+        padding: 4px 4px 24px;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scrollbar-color: var(--brown) rgba(75, 42, 31, 0.16);
+      }
+
+      .gallery-card {
+        display: grid;
+        flex: 0 0 min(100%, 1080px);
+        grid-template-rows: auto auto;
+        overflow: visible;
+        scroll-snap-align: center;
+        background: rgba(250, 238, 219, 0.94);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 12px 16px 0 rgba(75, 42, 31, 0.22);
+      }
+
+      .gallery-card img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+        background: #f7ead8;
+        border-bottom: 2px solid var(--brown);
+        transition: transform 240ms ease;
+      }
+
+      .gallery-card:hover img {
+        transform: none;
+      }
+
+      .gallery-card div {
+        padding: 18px;
+      }
+
+      .gallery-card h3 {
+        margin: 0;
+        color: #3d2a22;
+        font-size: 1.28rem;
+        font-weight: 950;
+      }
+
+      .gallery-controls {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin: -8px 0 18px;
+      }
+
+      .gallery-controls button {
+        display: grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        color: #f8ead3;
+        cursor: pointer;
+        background: var(--brown);
+        border: 2px solid var(--brown-2);
+        border-radius: 50%;
+        box-shadow: 0 5px 0 var(--brown-2);
+        font-size: 1.35rem;
+        font-weight: 950;
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .gallery-controls button:hover {
+        transform: translateY(-2px);
+      }
+
+      .gallery-controls button:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 0 var(--brown-2);
+      }
+
+      .tilt-ready {
+        transform:
+          perspective(900px)
+          rotateX(calc(var(--tilt-y, 0) * -1deg))
+          rotateY(calc(var(--tilt-x, 0) * 1deg))
+          translateY(var(--lift, 0));
+        transform-style: preserve-3d;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease;
+        will-change: transform;
+      }
+
+      .tilt-ready:hover {
+        --lift: -5px;
+      }
+
+      .coffee-cursor {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 140;
+        width: 16px;
+        height: 24px;
+        pointer-events: none;
+        border: 2px solid rgba(45, 28, 21, 0.88);
+        border-radius: 50%;
+        background:
+          linear-gradient(90deg, transparent 45%, rgba(45, 28, 21, 0.48) 46% 54%, transparent 55%),
+          #7a4b38;
+        box-shadow: 4px 5px 0 rgba(45, 28, 21, 0.18);
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(24deg) scale(0.9);
+        transition:
+          opacity 160ms ease,
+          transform 120ms ease;
+      }
+
+      .coffee-cursor.active {
+        opacity: 0.82;
+      }
+
+      .click-layer {
+        position: fixed;
+        inset: 0;
+        z-index: 130;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .click-bean {
+        position: fixed;
+        width: 12px;
+        height: 18px;
+        pointer-events: none;
+        border: 2px solid rgba(45, 28, 21, 0.82);
+        border-radius: 50%;
+        background:
+          linear-gradient(90deg, transparent 45%, rgba(45, 28, 21, 0.42) 46% 54%, transparent 55%),
+          #8a5940;
+        box-shadow: 2px 3px 0 rgba(45, 28, 21, 0.16);
+        animation: bean-pop 760ms ease-out forwards;
+      }
+
+      .ambient-beans {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .ambient-beans span {
+        position: absolute;
+        width: 18px;
+        height: 26px;
+        border: 2px solid rgba(75, 42, 31, 0.18);
+        border-radius: 50%;
+        background:
+          linear-gradient(90deg, transparent 46%, rgba(75, 42, 31, 0.14) 47% 54%, transparent 55%),
+          rgba(137, 89, 103, 0.13);
+        animation: ambient-drift 9s ease-in-out infinite alternate;
+      }
+
+      .ambient-beans span:nth-child(1) {
+        left: 8%;
+        top: 18%;
+      }
+
+      .ambient-beans span:nth-child(2) {
+        right: 12%;
+        top: 34%;
+        animation-delay: 1.4s;
+      }
+
+      .ambient-beans span:nth-child(3) {
+        left: 22%;
+        bottom: 12%;
+        animation-delay: 2.2s;
+      }
+
+      .ambient-beans span:nth-child(4) {
+        right: 28%;
+        bottom: 20%;
+        animation-delay: 3s;
+      }
+
+      .showcase {
+        width: 100%;
+        max-height: 760px;
+        overflow: hidden;
+        border-top: 16px solid var(--brown);
+        border-bottom: 16px solid var(--brown);
+        background: var(--brown);
+      }
+
+      .showcase img {
+        width: 100%;
+        height: min(760px, 72vw);
+        object-fit: cover;
+        object-position: center 63%;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .summary-card {
+        position: relative;
+        isolation: isolate;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        min-height: 320px;
+        padding: 36px;
+        text-align: center;
+        background: #4b2a1f;
+      }
+
+      .summary-card::before {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        content: "";
+        background: url("public/coffee-assets/summary-ip-cafe.png") center 52% / cover;
+        filter: saturate(0.48) brightness(0.72) contrast(0.9);
+        transform: scale(1.03);
+      }
+
+      .summary-card::after {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        background:
+          linear-gradient(135deg, rgba(246, 234, 215, 0.18), rgba(45, 28, 21, 0.64)),
+          radial-gradient(circle at 50% 45%, rgba(75, 42, 31, 0.26), rgba(45, 28, 21, 0.7));
+      }
+
+      .summary-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .summary-card h2 {
+        margin: 4px 0;
+        color: #fff2dc;
+        font-size: clamp(2.6rem, 6vw, 5.4rem);
+        font-weight: 950;
+        line-height: 0.95;
+        text-shadow:
+          2px 2px 0 #4b2a1f,
+          5px 5px 0 rgba(45, 28, 21, 0.72);
+      }
+
+      .summary-card p {
+        color: #fff2dc;
+        text-shadow: 2px 2px 0 rgba(45, 28, 21, 0.58);
+      }
+
+      .stars {
+        display: flex;
+        gap: 10px;
+      }
+
+      .stars span {
+        width: 12px;
+        height: 12px;
+        background: var(--brown);
+        transform: rotate(45deg);
+      }
+
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 560ms ease,
+          transform 560ms ease;
+      }
+
+      [data-reveal].visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      [data-reveal].tilt-ready.visible {
+        transform:
+          perspective(900px)
+          rotateX(calc(var(--tilt-y, 0) * -1deg))
+          rotateY(calc(var(--tilt-x, 0) * 1deg))
+          translateY(var(--lift, 0));
+      }
+
+      @keyframes mascot-react {
+        0% {
+          filter: saturate(1.08) contrast(1.08);
+        }
+        42% {
+          filter: saturate(1.28) contrast(1.12) drop-shadow(12px 12px 0 rgba(45, 28, 21, 0.18));
+        }
+        72% {
+          filter: saturate(1.14) contrast(1.06);
+        }
+        100% {
+          filter: saturate(1.02) contrast(1.02);
+        }
+      }
+
+      @keyframes burst-pop {
+        0% {
+          opacity: 0;
+          transform: rotate(var(--burst-rotate, 18deg)) scaleX(0);
+        }
+        38% {
+          opacity: 1;
+          transform: rotate(var(--burst-rotate, 18deg)) scaleX(1);
+        }
+        100% {
+          opacity: 0;
+          transform: rotate(var(--burst-rotate, 18deg)) scaleX(1.12);
+        }
+      }
+
+      @keyframes speed-swipe {
+        0% {
+          opacity: 0;
+          transform: translateX(-42px) scaleX(0.2);
+        }
+        38% {
+          opacity: 0.84;
+          transform: translateX(18px) scaleX(1);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(80px) scaleX(0.8);
+        }
+      }
+
+      @keyframes steam-rise {
+        0% {
+          opacity: 0;
+          transform: translateY(20px) scale(0.72) rotate(0);
+        }
+        35% {
+          opacity: 0.92;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-78px) scale(1.18) rotate(10deg);
+        }
+      }
+
+      @keyframes bean-pop {
+        0% {
+          opacity: 0;
+          transform: translate(0, 0) rotate(0) scale(0.4);
+        }
+        18% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translate(var(--bean-x), var(--bean-y)) rotate(var(--bean-rotate)) scale(1);
+        }
+      }
+
+      @keyframes ambient-drift {
+        from {
+          transform: translate3d(0, 0, 0) rotate(-12deg);
+        }
+        to {
+          transform: translate3d(18px, -26px, 0) rotate(18deg);
+        }
+      }
+
+      @keyframes logo-in {
+        from {
+          opacity: 0;
+          transform: translateY(18px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes logo-pop {
+        from {
+          opacity: 0;
+          transform: translateY(20px) scale(0.9) rotate(-1deg);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotate(0);
+        }
+      }
+
+      @keyframes logo-shine {
+        0% {
+          left: -35%;
+          opacity: 0;
+        }
+        15% {
+          opacity: 1;
+        }
+        45% {
+          left: 105%;
+          opacity: 0;
+        }
+        100% {
+          left: 105%;
+          opacity: 0;
+        }
+      }
+
+      @keyframes logo-sequence-in {
+        from {
+          opacity: 0;
+          transform: translateY(12px) scale(0.985);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes logo-overlay-in {
+        from {
+          opacity: 0;
+          filter: blur(3px);
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          filter: blur(0);
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 980px) {
+        .topbar {
+          align-items: flex-start;
+          min-height: 64px;
+        }
+
+        .menu {
+          display: inline-grid;
+          place-items: center;
+        }
+
+        .nav {
+          position: absolute;
+          top: calc(100% + 8px);
+          right: 0;
+          left: 0;
+          display: none;
+          grid-template-columns: repeat(2, 1fr);
+          padding: 12px;
+          background: #51423b;
+          border: 2px solid var(--brown-2);
+        }
+
+        .nav.open {
+          display: grid;
+        }
+
+        .hero-ribbon {
+          margin-top: -80px;
+        }
+
+        .hero-grid,
+        .intro-grid,
+        .summary-grid,
+        .visual-card,
+        .ip-playground {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-grid {
+          padding-top: 96px;
+        }
+
+        .hero-art,
+        .hero-art img {
+          height: auto;
+          min-height: 0;
+        }
+
+        .visual-spec {
+          border-top: 2px solid var(--brown);
+          border-left: 0;
+        }
+
+        .ip-control {
+          border-top: 2px solid var(--brown);
+          border-left: 0;
+        }
+
+        .pain-grid,
+        .position-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .pain {
+          aspect-ratio: auto;
+          min-height: 62px;
+          border-radius: 999px;
+        }
+
+        .position-grid article {
+          min-height: 170px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .coffee-cursor,
+        .ambient-beans {
+          display: none;
+        }
+
+        .topbar,
+        .hero-grid,
+        .section {
+          width: min(100% - 24px, 1180px);
+        }
+
+        .hero-ribbon {
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 6px;
+          margin-top: -78px;
+        }
+
+        h1 {
+          font-size: clamp(3.2rem, 18vw, 5.4rem);
+          -webkit-text-stroke: 2px #4b2a1f;
+          transform: skewX(-6deg) rotate(-1.5deg);
+          text-shadow:
+            1px 1px 0 #b48f9a,
+            3px 3px 0 #895967,
+            5px 5px 0 #4b2a1f,
+            9px 9px 0 #2d1c15,
+            13px 13px 0 rgba(137, 89, 103, 0.32);
+        }
+
+        .actions {
+          display: grid;
+        }
+
+        .action {
+          width: 100%;
+        }
+
+        .hero-art,
+        .hero-art img {
+          height: auto;
+          min-height: 0;
+        }
+
+        .section {
+          padding: 64px 0;
+        }
+
+        .section-title {
+          display: block;
+        }
+
+        .panel,
+        .visual-copy,
+        .summary-card {
+          padding: 24px;
+        }
+
+        .palette-list {
+          grid-template-columns: 1fr;
+        }
+
+        .palette-strip {
+          min-height: 64px;
+        }
+
+        .visual-card,
+        .visual-spec {
+          min-height: auto;
+        }
+
+        .mascot-roster {
+          overflow-x: auto;
+          grid-template-columns: minmax(660px, 1fr);
+        }
+
+        .mascot-scene,
+        .mascot-scene img {
+          min-height: auto;
+        }
+
+        .mascot-names {
+          min-width: 660px;
+        }
+
+        .ip-stage {
+          min-height: 360px;
+        }
+
+        .ip-team-image {
+          width: min(82%, 360px);
+        }
+
+        .ip-speech {
+          position: relative;
+          top: auto;
+          left: auto;
+          width: 100%;
+          margin-bottom: 18px;
+        }
+
+        .showcase img {
+          height: 380px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress" id="progress"></div>
+    <div class="coffee-cursor" id="coffee-cursor" aria-hidden="true"></div>
+    <div class="click-layer" id="click-layer" aria-hidden="true"></div>
+    <div class="ambient-beans" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+    <header class="topbar">
+      <a href="#top" class="brand" aria-label="DOU COFFEE home">
+        <span class="brand-symbol">DC</span>
+        <span>DOU COFFEE</span>
+      </a>
+      <button class="menu" id="menu" type="button" aria-label="打开导航">☰</button>
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a href="#intro"><small>Intro</small><span>品牌介绍</span></a>
+        <a href="#strategy"><small>Strategy</small><span>策略定位</span></a>
+        <a href="#visual"><small>Visual</small><span>视觉系统</span></a>
+        <a href="#packaging"><small>Packaging</small><span>包装延展</span></a>
+        <a href="#ip-interaction"><small>IP</small><span>角色互动</span></a>
+        <a href="#summary"><small>Summary</small><span>项目总结</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-ribbon" aria-hidden="true">
+          <span>Aroma</span><span>Velvet</span><span>Artisan</span><span>Origins</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-copy" data-reveal>
+            <p class="eyebrow">Italian Capsule</p>
+            <h1>DOU COFFEE</h1>
+            <p>意式胶囊咖啡品牌设计全案，以拟人化角色和复古漫画视觉，把家用咖啡变成轻松、稳定、有生活方式感的日常仪式。</p>
+            <div class="actions">
+              <a class="action primary" href="#intro">开始浏览</a>
+              <a class="action secondary" href="#visual">查看视觉系统</a>
+            </div>
+          </div>
+          <div class="hero-art" data-reveal>
+            <img src="public/coffee-assets/hero-main-new.jpg" alt="DOU COFFEE 品牌角色主视觉" />
+          </div>
+        </div>
+        <div class="checker" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </section>
+
+      <section class="section" id="intro">
+        <div class="section-title" data-reveal>
+          <span>Brand Introduction</span>
+          <h2>品牌介绍</h2>
+        </div>
+        <div class="intro-grid">
+          <article class="panel" data-reveal>
+            <h3>把胶囊咖啡做得更好记</h3>
+            <p>DOU COFFEE 面向喜欢稳定咖啡风味、同时重视包装趣味与视觉记忆的年轻用户。品牌通过角色阵列、复古字形与高识别包装，降低专业咖啡的距离感。</p>
+          </article>
+          <article class="image-panel" data-reveal>
+            <img src="public/coffee-assets/intro-brand-clean.jpg" alt="品牌分析视觉" />
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="strategy">
+        <div class="section-title" data-reveal>
+          <span>Market Background</span>
+          <h2>策略定位</h2>
+        </div>
+        <div class="pain-grid" data-reveal>
+          <div class="pain"><span>现磨门槛高</span></div>
+          <div class="pain"><span>速溶口感差</span></div>
+          <div class="pain"><span>胶囊同质化</span></div>
+        </div>
+        <div class="position-grid" data-reveal>
+          <article><h3>意式风味</h3><p>Italian Flavor</p></article>
+          <article><h3>便捷</h3><p>Easy & Quick</p></article>
+          <article><h3>设计感</h3><p>Stylish Design</p></article>
+        </div>
+        <p class="strategy-line" data-reveal>通过视觉和产品语言，把“稳定风味、快捷制作、设计感”合并成一个清楚的品牌承诺。</p>
+      </section>
+
+      <section class="section" id="visual">
+        <div class="section-title" data-reveal>
+          <span>Creative Brand Assets</span>
+          <h2>视觉系统</h2>
+        </div>
+        <div class="tabs" data-reveal>
+          <button class="active" type="button" data-tab="logo">Logo 规范</button>
+          <button type="button" data-tab="color">色彩系统</button>
+          <button type="button" data-tab="characters">角色资产</button>
+        </div>
+        <div class="visual-card logo-mode" id="visual-card" data-reveal>
+          <div class="visual-copy">
+            <p class="eyebrow" id="visual-kicker">Standardization</p>
+            <h3 id="visual-title">Logo 规范</h3>
+            <p id="visual-copy">呈现品牌 Logo 的标准化制图，保留比例、留白、辅助线与尺寸标注。</p>
+          </div>
+          <div class="visual-spec logo-spec" id="visual-spec">
+            <div class="logo-standard-board">
+              <div class="logo-standard-stage" aria-label="DOU COFFEE Logo 标准化规范图">
+                <img class="logo-sequence-frame step-logo" src="public/coffee-assets/logo-sequence-1.jpg" alt="DOU COFFEE Logo 标准化第一步" />
+                <img class="logo-sequence-frame step-frame" src="public/coffee-assets/logo-sequence-lines.png" alt="DOU COFFEE Logo 标准化第二步" />
+                <img class="logo-sequence-frame step-size" src="public/coffee-assets/logo-sequence-measure.png" alt="DOU COFFEE Logo 标准化第三步" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="packaging">
+        <div class="section-title" data-reveal>
+          <span>Packaging Design</span>
+          <h2>包装与延展</h2>
+        </div>
+        <div class="gallery-controls" data-reveal>
+          <button type="button" data-gallery-prev aria-label="上一张包装图">‹</button>
+          <button type="button" data-gallery-next aria-label="下一张包装图">›</button>
+        </div>
+        <div class="gallery-grid" id="packaging-gallery">
+          <article class="gallery-card" data-reveal>
+            <img src="public/coffee-assets/capsule-combo-new.jpg" style="object-position: 50% 50%" alt="胶囊组合" />
+            <div><p>Capsule Style</p><h3>胶囊组合</h3></div>
+          </article>
+          <article class="gallery-card" data-reveal>
+            <img src="public/coffee-assets/packaging-box-new.jpg" alt="礼盒包装" />
+            <div><p>Box Design</p><h3>礼盒包装</h3></div>
+          </article>
+          <article class="gallery-card" data-reveal>
+            <img src="public/coffee-assets/packaging-lifestyle-new.jpg" alt="产品场景" />
+            <div><p>Lifestyle</p><h3>产品场景</h3></div>
+          </article>
+          <article class="gallery-card" data-reveal>
+            <img src="public/coffee-assets/poster-new.jpg" alt="户外海报" />
+            <div><p>Poster</p><h3>户外海报</h3></div>
+          </article>
+          <article class="gallery-card" data-reveal>
+            <img src="public/coffee-assets/merchandise-set-new.jpg" alt="周边套组" />
+            <div><p>Merchandise</p><h3>周边套组</h3></div>
+          </article>
+          <article class="gallery-card" data-reveal>
+            <img src="public/coffee-assets/digital-materials-new.jpg" alt="线上物料" />
+            <div><p>Digital</p><h3>线上物料</h3></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section ip-section" id="ip-interaction">
+        <div class="section-title" data-reveal>
+          <span>IP Interaction</span>
+          <h2>角色互动</h2>
+        </div>
+        <div class="ip-playground single-ip" id="ip-playground" data-reveal data-pose="0">
+          <div class="ip-stage" id="ip-click-stage" role="button" tabindex="0" aria-label="点击豆豆切换互动姿态">
+            <div class="ip-burst" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="ip-speed-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="ip-steam" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="ip-speech" id="ip-speech">
+              <p>IP Interaction</p>
+              <strong id="ip-line">点击豆豆，切换不同姿态和对应说明。</strong>
+            </div>
+            <img class="ip-team-image" id="ip-team-image" src="public/coffee-assets/doudou-ip-1.png" alt="豆豆 Doudou 互动角色姿态" />
+          </div>
+          <div class="ip-control" id="ip-control">
+            <p class="eyebrow">Click To Pose</p>
+            <h3 id="ip-name">奔跑豆豆</h3>
+            <p class="ip-role" id="ip-role">开场冲刺姿态</p>
+            <div class="ip-flavor" id="ip-flavor">Pose 01 / Running Bean</div>
+            <button class="ip-main-button" id="ip-main-button" type="button">点击切换姿态</button>
+            <p class="ip-hint">每一次单击都会让豆豆切换新的滚动、跳跃和风味爆点，像一颗从包装里弹出来的咖啡豆。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="summary">
+        <div class="section-title" data-reveal>
+          <span>Project Summary</span>
+          <h2>项目总结</h2>
+        </div>
+        <div class="summary-grid">
+          <article class="panel" data-reveal>
+            <h3>从策略到触点的统一</h3>
+            <p>项目把“家用意式胶囊咖啡”的功能需求，转译成有角色、有节奏、有收藏感的品牌资产。包装、社媒、海报和周边在同一套视觉语法中延展。</p>
+          </article>
+          <article class="summary-card" data-reveal>
+            <p>Flavor locked in.</p>
+            <h2>DOU COFFEE</h2>
+            <div class="stars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const logoStandardHtml = `
+        <div class="logo-standard-board">
+          <div class="logo-standard-stage" aria-label="DOU COFFEE Logo 标准化规范图">
+            <img class="logo-sequence-frame step-logo" src="public/coffee-assets/logo-sequence-1.jpg" alt="DOU COFFEE Logo 标准化第一步" />
+            <img class="logo-sequence-frame step-frame" src="public/coffee-assets/logo-sequence-lines.png" alt="DOU COFFEE Logo 标准化第二步" />
+            <img class="logo-sequence-frame step-size" src="public/coffee-assets/logo-sequence-measure.png" alt="DOU COFFEE Logo 标准化第三步" />
+          </div>
+        </div>`;
+
+      const visualData = {
+        logo: {
+          kicker: "Standardization",
+          title: "Logo 规范",
+          copy: "呈现品牌 Logo 的标准化制图，保留比例、留白、辅助线与尺寸标注。",
+          className: "visual-spec logo-spec",
+          html: logoStandardHtml,
+        },
+        color: {
+          kicker: "Coffee Color",
+          title: "色彩系统",
+          copy: "深咖啡稳定品牌基底，粉紫与酒红承接包装记忆点，墨绿和深红用于风味区分。",
+          className: "visual-spec color-spec",
+          html: [
+            ["Espresso", "#51423b", "81 66 59", "69 71 72 33"],
+            ["Velvet", "#b48f9a", "180 143 154", "36 49 30 0"],
+            ["Berry", "#895967", "137 89 103", "56 72 51 3"],
+            ["Origin", "#3a5350", "58 83 80", "75 48 60 31"],
+            ["Roast", "#6b2e28", "107 46 40", "45 82 78 32"],
+            ["Ink", "#282828", "40 40 40", "73 67 65 78"],
+          ]
+            .reduce(
+              (html, [name, hex, rgb, cmyk], index, colors) => {
+                if (index === 0) {
+                  html.push(
+                    `<div class="palette-board"><div class="palette-strip">${colors
+                      .map(([, color]) => `<span style="background:${color}"></span>`)
+                      .join("")}</div><div class="palette-list">`,
+                  );
+                }
+                html.push(
+                  `<article class="palette-item"><span class="palette-dot" style="background:${hex}"></span><div><h4>${name}</h4><p>${hex}</p><div class="palette-meta"><span>RGB ${rgb}</span><span>CMYK ${cmyk}</span></div></div></article>`,
+                );
+                if (index === colors.length - 1) html.push("</div></div>");
+                return html;
+              },
+              [],
+            )
+            .join(""),
+        },
+        characters: {
+          kicker: "Brand Mascots",
+          title: "角色资产",
+          copy: "为每个品牌角色建立姓名与身份，让主角群在包装、周边和社媒中都能被准确识别。",
+          className: "visual-spec mascot-spec",
+          html: [
+            '<div class="mascot-roster">',
+            '<div class="mascot-scene"><img src="public/coffee-assets/mascot-full-team.jpg" alt="DOU COFFEE 五位品牌角色整体阵列" /></div>',
+            '<div class="mascot-names">',
+            '<div class="mascot-name"><strong>摩摩 Momo</strong><span>咖啡机队长</span></div>',
+            '<div class="mascot-name"><strong>拿拿 Latty</strong><span>冰咖杯搭档</span></div>',
+            '<div class="mascot-name"><strong>豆豆 Doudou</strong><span>风味豆主角</span></div>',
+            '<div class="mascot-name"><strong>勺勺 Spoonie</strong><span>调味指挥官</span></div>',
+            '<div class="mascot-name"><strong>袋袋 Baggy</strong><span>包装守护员</span></div>',
+            '</div>',
+            '</div>',
+          ].join(""),
+        },
+      };
+
+      const nav = document.getElementById("nav");
+      document.getElementById("menu").addEventListener("click", () => nav.classList.toggle("open"));
+      nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => nav.classList.remove("open")));
+
+      const progress = document.getElementById("progress");
+      function updateProgress() {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+      }
+      const navLinks = [...nav.querySelectorAll("a[href^='#']")];
+      const sectionMap = navLinks
+        .map((link) => ({
+          link,
+          section: document.querySelector(link.getAttribute("href")),
+        }))
+        .filter((item) => item.section);
+      function updateActiveNav() {
+        const checkpoint = scrollY + (document.querySelector(".topbar")?.offsetHeight || 0) + 92;
+        let activeItem = sectionMap[0];
+        sectionMap.forEach((item) => {
+          const top = item.section.getBoundingClientRect().top + scrollY;
+          if (top <= checkpoint) activeItem = item;
+        });
+        navLinks.forEach((link) => link.classList.toggle("active", link === activeItem?.link));
+      }
+      addEventListener(
+        "scroll",
+        () => {
+          updateProgress();
+          updateActiveNav();
+        },
+        { passive: true },
+      );
+      addEventListener("hashchange", updateActiveNav);
+      updateProgress();
+      requestAnimationFrame(updateActiveNav);
+      setTimeout(updateActiveNav, 120);
+
+      const hero = document.querySelector(".hero");
+      hero?.addEventListener("pointermove", (event) => {
+        if (!matchMedia("(pointer: fine)").matches) return;
+        const rect = hero.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        hero.style.setProperty("--hero-x", x.toFixed(3));
+        hero.style.setProperty("--hero-y", y.toFixed(3));
+      });
+      hero?.addEventListener("pointerleave", () => {
+        hero.style.setProperty("--hero-x", "0");
+        hero.style.setProperty("--hero-y", "0");
+      });
+
+      const coffeeCursor = document.getElementById("coffee-cursor");
+      const clickLayer = document.getElementById("click-layer");
+      if (matchMedia("(pointer: fine)").matches) {
+        addEventListener(
+          "pointermove",
+          (event) => {
+            coffeeCursor?.classList.add("active");
+            coffeeCursor?.style.setProperty("left", `${event.clientX}px`);
+            coffeeCursor?.style.setProperty("top", `${event.clientY}px`);
+            coffeeCursor?.style.setProperty("transform", `translate(-50%, -50%) rotate(${event.clientX % 38}deg) scale(0.9)`);
+          },
+          { passive: true },
+        );
+      }
+
+      function popBeans(x, y) {
+        if (!clickLayer) return;
+        for (let index = 0; index < 5; index += 1) {
+          const bean = document.createElement("span");
+          const angle = (Math.PI * 2 * index) / 5 - Math.PI / 2;
+          const distance = 38 + index * 8;
+          bean.className = "click-bean";
+          bean.style.left = `${x}px`;
+          bean.style.top = `${y}px`;
+          bean.style.setProperty("--bean-x", `${Math.cos(angle) * distance}px`);
+          bean.style.setProperty("--bean-y", `${Math.sin(angle) * distance}px`);
+          bean.style.setProperty("--bean-rotate", `${index * 72 + 45}deg`);
+          clickLayer.appendChild(bean);
+          bean.addEventListener("animationend", () => bean.remove(), { once: true });
+        }
+      }
+      addEventListener("click", (event) => popBeans(event.clientX, event.clientY));
+
+      const tiltItems = document.querySelectorAll(".panel, .image-panel, .visual-card, .gallery-card, .summary-card, .position-grid article");
+      tiltItems.forEach((item) => {
+        item.classList.add("tilt-ready");
+        item.addEventListener("pointermove", (event) => {
+          if (!matchMedia("(pointer: fine)").matches) return;
+          const rect = item.getBoundingClientRect();
+          const x = ((event.clientX - rect.left) / rect.width - 0.5) * 8;
+          const y = ((event.clientY - rect.top) / rect.height - 0.5) * 8;
+          item.style.setProperty("--tilt-x", x.toFixed(2));
+          item.style.setProperty("--tilt-y", y.toFixed(2));
+        });
+        item.addEventListener("pointerleave", () => {
+          item.style.setProperty("--tilt-x", "0");
+          item.style.setProperty("--tilt-y", "0");
+        });
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14, rootMargin: "0px 0px -8% 0px" },
+      );
+      document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
+
+      const visualCard = document.getElementById("visual-card");
+      const visualSpec = document.getElementById("visual-spec");
+      const visualKicker = document.getElementById("visual-kicker");
+      const visualTitle = document.getElementById("visual-title");
+      const visualCopy = document.getElementById("visual-copy");
+      document.querySelectorAll(".tabs button").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.querySelectorAll(".tabs button").forEach((item) => item.classList.remove("active"));
+          button.classList.add("active");
+          const data = visualData[button.dataset.tab];
+          visualKicker.textContent = data.kicker;
+          visualTitle.textContent = data.title;
+          visualCopy.textContent = data.copy;
+          visualSpec.className = data.className;
+          visualSpec.innerHTML = data.html;
+          visualCard.classList.toggle("logo-mode", button.dataset.tab === "logo");
+        });
+      });
+
+      const ipPoses = [
+        {
+          name: "奔跑豆豆",
+          role: "开场奔跑姿态",
+          flavor: "Pose 01 / Running Bean",
+          line: "豆豆挥着拳头跑进画面，像第一颗被唤醒的咖啡豆，负责把视线拉进互动。",
+          image: "public/coffee-assets/doudou-ip-1.png",
+          accent: "#7a4b38",
+        },
+        {
+          name: "冲刺豆豆",
+          role: "活力冲刺姿态",
+          flavor: "Pose 02 / Roast Dash",
+          line: "豆豆带着小烟尘向前冲，把复古漫画里的速度感和活力感带出来。",
+          image: "public/coffee-assets/doudou-ip-2.png",
+          accent: "#b84b48",
+        },
+        {
+          name: "香气豆豆",
+          role: "闭眼闻香姿态",
+          flavor: "Pose 03 / Aroma Groove",
+          line: "豆豆闭眼摇摆，像沉浸在刚萃出的咖啡香里，强调风味、香气和治愈感。",
+          image: "public/coffee-assets/doudou-ip-3.png",
+          accent: "#895967",
+        },
+      ];
+
+      const ipPlayground = document.getElementById("ip-playground");
+      const ipStage = document.getElementById("ip-click-stage");
+      const ipButton = document.getElementById("ip-main-button");
+      const ipControl = document.getElementById("ip-control");
+      const ipName = document.getElementById("ip-name");
+      const ipRole = document.getElementById("ip-role");
+      const ipFlavor = document.getElementById("ip-flavor");
+      const ipLine = document.getElementById("ip-line");
+      const ipTeamImage = document.getElementById("ip-team-image");
+      let ipPoseIndex = 0;
+
+      function setIpPose(nextIndex) {
+        const index = ((nextIndex % ipPoses.length) + ipPoses.length) % ipPoses.length;
+        const pose = ipPoses[index];
+        ipPoseIndex = index;
+        ipPlayground?.setAttribute("data-pose", String(index));
+        ipTeamImage.src = pose.image;
+        ipName.textContent = pose.name;
+        ipRole.textContent = pose.role;
+        ipFlavor.textContent = pose.flavor;
+        ipLine.textContent = pose.line;
+        ipControl?.style.setProperty("--ip-accent", pose.accent);
+        ipPlayground?.style.setProperty("--ip-accent", pose.accent);
+        ipPlayground?.classList.remove("is-switching");
+        ipTeamImage?.classList.remove("is-reacting");
+        void ipPlayground?.offsetWidth;
+        ipPlayground?.classList.add("is-switching");
+        ipTeamImage?.classList.add("is-reacting");
+      }
+
+      function nextIpPose() {
+        setIpPose(ipPoseIndex + 1);
+      }
+
+      ipStage?.addEventListener("click", nextIpPose);
+      ipButton?.addEventListener("click", nextIpPose);
+      ipStage?.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          nextIpPose();
+        }
+      });
+      setIpPose(0);
+
+      const gallery = document.getElementById("packaging-gallery");
+      const galleryPrev = document.querySelector("[data-gallery-prev]");
+      const galleryNext = document.querySelector("[data-gallery-next]");
+      function moveGallery(direction) {
+        const card = gallery?.querySelector(".gallery-card");
+        if (!gallery || !card) return;
+        const gap = parseFloat(getComputedStyle(gallery).gap) || 0;
+        gallery.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: "smooth" });
+      }
+      galleryPrev?.addEventListener("click", () => moveGallery(-1));
+      galleryNext?.addEventListener("click", () => moveGallery(1));
+      gallery?.addEventListener(
+        "wheel",
+        (event) => {
+          if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+          event.preventDefault();
+          gallery.scrollBy({ left: event.deltaY * 1.1, behavior: "smooth" });
+        },
+        { passive: false },
+      );
+    </script>
+  </body>
+</html>
