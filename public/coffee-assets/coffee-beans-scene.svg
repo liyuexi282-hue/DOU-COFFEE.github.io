@@ -1,0 +1,88 @@
+<svg width="1500" height="760" viewBox="0 0 1500 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="1500" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4D7B4"/>
+      <stop offset="0.48" stop-color="#9B6245"/>
+      <stop offset="1" stop-color="#2E1B15"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(578 244) rotate(45) scale(820 410)">
+      <stop stop-color="#F8EAD3" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#F8EAD3" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="beanShadow" x="-35%" y="-35%" width="170%" height="180%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="10" dy="14" stdDeviation="7" flood-color="#1E110D" flood-opacity="0.34"/>
+    </filter>
+  </defs>
+  <rect width="1500" height="760" fill="url(#base)"/>
+  <rect width="1500" height="760" fill="url(#glow)"/>
+  <g opacity="0.26">
+    <path d="M0 101C180 54 317 74 456 119C652 183 791 180 972 103C1162 23 1324 43 1500 111" stroke="#F8EAD3" stroke-width="26" stroke-linecap="round"/>
+    <path d="M0 676C224 585 379 592 575 648C764 701 945 682 1133 607C1274 551 1389 555 1500 603" stroke="#2A1711" stroke-width="22" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#beanShadow)">
+    <g transform="translate(91 102) rotate(-25)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#72412D" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#C68D68" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(309 61) rotate(19)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#8E563B" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#D8A174" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(597 94) rotate(-8)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#5E3627" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#B97C57" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(823 45) rotate(28)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#7B4932" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#C88E65" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1170 94) rotate(-18)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#8A5037" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#D4A06F" stroke-width="8" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(157 336) rotate(14)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#9B6245" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#E0AD7D" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(438 315) rotate(-17)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#70402E" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#C58B62" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(726 328) rotate(23)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#6A3B2B" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#C1845C" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1041 305) rotate(-10)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#8C553C" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#D7A174" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1304 343) rotate(19)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#5D3325" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#AD7452" stroke-width="8" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(35 586) rotate(-8)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#7A4732" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#C88F66" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(363 563) rotate(26)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#935C41" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#DEAA7B" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(660 577) rotate(-21)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#6F402E" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#C78A61" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(987 557) rotate(12)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#855037" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#D49B6E" stroke-width="8" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(1235 563) rotate(-29)">
+      <path d="M44 8C95 -4 147 28 159 80C172 136 127 184 70 176C18 168 -13 109 5 58C12 35 25 16 44 8Z" fill="#72422F" stroke="#2A1711" stroke-width="9"/>
+      <path d="M82 5C48 53 49 116 99 168" stroke="#C88F66" stroke-width="8" stroke-linecap="round"/>
+    </g>
+  </g>
+  <rect width="1500" height="760" fill="#F8EAD3" opacity="0.12"/>
+</svg>
